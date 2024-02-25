@@ -1,9 +1,9 @@
 .PHONY = all clean 
 
-all: Main
+all: StrList
 
-Main: Main.o StrList.o StrList.h 
-	gcc -Wall -g Main.o StrList.o -o Main
+StrList: Main.o StrList.o StrList.h 
+	gcc -Wall -g Main.o StrList.o -o StrList
 
 Main.o: Main.c StrList.h
 	gcc -Wall -g -c Main.c
@@ -12,4 +12,4 @@ StrList.o: StrList.c StrList.h
 	gcc -Wall -g -c StrList.c
 
 clean:
-	rm -f *.o *.a Main
+	rm -f *.o *.a StrList
